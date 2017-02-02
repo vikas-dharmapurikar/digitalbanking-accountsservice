@@ -21,5 +21,5 @@ To create docker image, run
 start the Docker quickstart Terminal.
 Then 
 1. mvn package docker:build - This will create the docker image
-2. docker-compose up - This will download all containers and run the tomcat instance.
+2. docker-compose up - This will download all containers and run the tomcat instance
 
