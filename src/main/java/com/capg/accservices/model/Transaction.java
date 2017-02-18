@@ -1,19 +1,19 @@
 package com.capg.accservices.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "Transaction")
+@Table(name = "account_tansaction", catalog="postgres", schema="public")
 public class Transaction implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -23,33 +23,47 @@ public class Transaction implements Serializable{
 	@Column(name="transaction_id")
 	private int transactionId; 
 	
+	@Column(name="tx_date")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date transactionDate;
+	
+	@Column(name="tx_details")
+	private String transactionDetails; 
+	
 	@Column(name="account_no")
-	private int accountNo; 
-	
-	@Column(name="account_balance")
-	private double accountBalance;
-		
-	@Column(name="transaction_type")
-	private String transactionType; 
-	
-	@Column(name="comments")
-	private String comments; 
-	
-	@Column(name="transaction_date")
-	private Timestamp transactionDate;
+	private Integer accountNo; 
 
-	@Column(name="account_balance_debit")
-	private double accountBalanceDebit;
+	@Column(name="tx_type")
+	private String transactionType;
 	
-    @Column(name="account_balance_credit")
-	private double accountBalanceCredit;
-	
+    @Column(name="tx_value")
+	private Double transactionValue;
+    
+    @Column(name="tx_description")
+    private String transactionDescription;
+
 	public int getTransactionId() {
 		return transactionId;
 	}
 
 	public void setTransactionId(int transactionId) {
 		this.transactionId = transactionId;
+	}
+
+	public Date getTransactionDate() {
+		return transactionDate;
+	}
+
+	public void setTransactionDate(Date transactionDate) {
+		this.transactionDate = transactionDate;
+	}
+
+	public String getTransactionDetails() {
+		return transactionDetails;
+	}
+
+	public void setTransactionDetails(String transactionDetails) {
+		this.transactionDetails = transactionDetails;
 	}
 
 	public int getAccountNo() {
@@ -60,14 +74,6 @@ public class Transaction implements Serializable{
 		this.accountNo = accountNo;
 	}
 
-	public double getAccountBalance() {
-		return accountBalance;
-	}
-
-	public void setAccountBalance(double accountBalance) {
-		this.accountBalance = accountBalance;
-	}
-
 	public String getTransactionType() {
 		return transactionType;
 	}
@@ -76,36 +82,27 @@ public class Transaction implements Serializable{
 		this.transactionType = transactionType;
 	}
 
-	public String getComments() {
-		return comments;
+	public Double getTransactionValue() {
+		return transactionValue;
 	}
 
-	public void setComments(String comments) {
-		this.comments = comments;
+	public void setTransactionValue(Double transactionValue) {
+		this.transactionValue = transactionValue;
 	}
 
-	public Timestamp getTransactionDate() {
-		return transactionDate;
+	public String getTransactionDescription() {
+		return transactionDescription;
 	}
 
-	public void setTransactionDate(Timestamp transactionDate) {
-		this.transactionDate = transactionDate;
+	public void setTransactionDescription(String transactionDescription) {
+		this.transactionDescription = transactionDescription;
 	}
 
-	public double getAccountBalanceDebit() {
-		return accountBalanceDebit;
-	}
-
-	public void setAccountBalanceDebit(double accountBalanceDebit) {
-		this.accountBalanceDebit = accountBalanceDebit;
-	}
-
-	public double getAccountBalanceCredit() {
-		return accountBalanceCredit;
-	}
-
-	public void setAccountBalanceCredit(double accountBalanceCredit) {
-		this.accountBalanceCredit = accountBalanceCredit;
-	}
-	
+	@Override
+	public String toString() {
+		return "Transaction [transactionId=" + transactionId + ", transactionDate=" + transactionDate
+				+ ", transactionDetails=" + transactionDetails + ", accountNo=" + accountNo + ", transaction_type="
+				+ transactionType + ", transactionValue=" + transactionValue + ", transactionDescription="
+				+ transactionDescription + "]";
+	} 
 }

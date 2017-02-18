@@ -42,3 +42,27 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.customer
     OWNER to postgres;
+    
+-- Table: public.account_tansaction
+
+-- DROP TABLE public.account_tansaction;
+
+CREATE TABLE public.account_tansaction
+(
+    transaction_id numeric NOT NULL,
+    tx_date timestamp with time zone,
+    tx_details character varying(200) COLLATE pg_catalog."default",
+    tx_type character varying(3) COLLATE pg_catalog."default",
+    account_no numeric(16),
+    tx_value numeric(10, 2),
+    tx_description character varying(250) COLLATE pg_catalog."default",
+    CONSTRAINT account_tansaction_pkey PRIMARY KEY (transaction_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.account_tansaction
+    OWNER to postgres;
+    
