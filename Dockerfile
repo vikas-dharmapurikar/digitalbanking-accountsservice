@@ -21,5 +21,6 @@ RUN cd /digitalbanking-accountsservice
 RUN mvn -f /digitalbanking-accountsservice/pom.xml clean install -DskipTests
 
 EXPOSE 8090
+EXPOSE 6379
 
 ENTRYPOINT ["a8sidecar", "--register", "--supervise", "java", "-jar", "-Dspring.profiles.active=docker", "/digitalbanking-accountsservice/target/accountservices-1.0.war"]
