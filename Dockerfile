@@ -9,6 +9,7 @@ ENV A8_REGISTRY_POLL=60s
 ENV A8_CONTROLLER_URL=http://ADM-a8-controller.mybluemix.net
 ENV A8_CONTROLLER_POLL=60s
 ENV A8_LOG=enable_log
+ENV A8_REGISTER=true
 
 
 RUN apt-get install git
