@@ -1,6 +1,5 @@
 FROM maven
 
-RUN curl -sSL https://github.com/amalgam8/amalgam8/releases/download/v0.4.0/a8sidecar.sh | sh
 
 ENV A8_SERVICE=accountsservices:v1
 ENV A8_ENDPOINT_PORT=8090
@@ -21,6 +20,5 @@ RUN cd /digitalbanking-accountsservice
 RUN mvn -f /digitalbanking-accountsservice/pom.xml clean install -DskipTests
 
 EXPOSE 8090
-EXPOSE 6379
 
-ENTRYPOINT ["a8sidecar", "--register", "--supervise", "java", "-jar", "-Dspring.profiles.active=docker", "/digitalbanking-accountsservice/target/accountservices-1.0.war"]
+ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=docker", "/digitalbanking-accountsservice/target/accountservices-1.0.war"]
