@@ -20,6 +20,7 @@ public class Application {
 	private static Logger log = Logger.getLogger(Application.class);
 
 	public static void main(final String[] args) throws Throwable {
+		System.out.println("ENTERING MAIN METHOD");
 		log.info("Logger enabled: Entering main \n\n");
 		SpringApplication.run(Application.class, args);
 	}

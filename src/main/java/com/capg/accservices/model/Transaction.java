@@ -43,58 +43,72 @@ public class Transaction implements Serializable{
     private String transactionDescription;
 
 	public int getTransactionId() {
+		System.out.println("GETTING TRANSACTION Id");
 		return transactionId;
 	}
 
 	public void setTransactionId(int transactionId) {
+		System.out.println("SETTING TRANSACTION Id");
 		this.transactionId = transactionId;
 	}
 
 	public Date getTransactionDate() {
+		System.out.println("GETTING TRANSACTION DATE");
 		return transactionDate;
 	}
 
 	public void setTransactionDate(Date transactionDate) {
+		System.out.println("SETTING TRANSACTION DATE");
 		this.transactionDate = transactionDate;
 	}
 
 	public String getTransactionDetails() {
+		System.out.println("GETTING TRANSACTION DETAILS");
 		return transactionDetails;
 	}
 
 	public void setTransactionDetails(String transactionDetails) {
+		System.out.println("SETTING TRANSACTION DETAILS");
 		this.transactionDetails = transactionDetails;
 	}
 
 	public int getAccountNo() {
+		System.out.println("GETTING ACCOUNT NO");
 		return accountNo;
 	}
 
 	public void setAccountNo(int accountNo) {
+		System.out.println("SETTING ACCOUNT NO");
 		this.accountNo = accountNo;
 	}
 
 	public String getTransactionType() {
+		System.out.println("GETTING TRANSACTION TYPE");
 		return transactionType;
 	}
 
 	public void setTransactionType(String transactionType) {
+		System.out.println("SETTING TRANSACTION TYPE");
 		this.transactionType = transactionType;
 	}
 
 	public Double getTransactionValue() {
+		System.out.println("GETTING TRANSACTION VALUE");
 		return transactionValue;
 	}
 
 	public void setTransactionValue(Double transactionValue) {
+		System.out.println("SETTING TRANSACTION VALUE");
 		this.transactionValue = transactionValue;
 	}
 
 	public String getTransactionDescription() {
+		System.out.println("GETTING TRANSACTION DESCRIPTION");
 		return transactionDescription;
 	}
 
 	public void setTransactionDescription(String transactionDescription) {
+		System.out.println("SETTING TRANSACTION DESCRIPTION");
 		this.transactionDescription = transactionDescription;
 	}
 

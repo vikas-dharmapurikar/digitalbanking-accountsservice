@@ -31,18 +31,21 @@ public class AccountServiceImpl implements AccountService{
 	private Integer maxRecentTransactions;
 
 	public List<Account> getCustomerAccounts(Integer customerId){
+		System.out.println("REQUEST IN SERVICE");
 		List<Account> accountList= accountDao.findByCustomerId(customerId);
 		return accountList;
 	}
 
 	@Override
 	public Account getAccountDetailsById(Integer accountNo) {
+		System.out.println("REQUEST IN SERVICE");
 		Account account= accountDao.findByAccountNo(accountNo);
 		return account;
 	}
 
 	@Override
 	public void depositeAmount(Integer accountNo, Double amount) {
+		System.out.println("REQUEST IN SERVICE");
 		Account account = accountDao.findByAccountNo(accountNo);
 		Transaction transaction =new Transaction();
 		double newBalance = account.getAccountBalance() + amount;
@@ -59,6 +62,7 @@ public class AccountServiceImpl implements AccountService{
 
 	@Override
 	public double withdrawAmount(Integer accountNo, Double amount) {
+		System.out.println("REQUEST IN SERVICE");
 		Account account = accountDao.findByAccountNo(accountNo);
 		Transaction transaction =new Transaction();
 		if (amount > account.getAccountBalance()) {
@@ -81,6 +85,7 @@ public class AccountServiceImpl implements AccountService{
 
 	@Override
 	public List<Transaction> getRecentTransactions(Integer accountNum, String startDate, String endDate) {
+		System.out.println("REQUEST IN SERVICE");
 		Date startDt;
 		List<Transaction> txList =null;
 		try {
