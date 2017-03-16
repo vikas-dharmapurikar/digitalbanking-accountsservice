@@ -19,7 +19,7 @@ RUN git clone https://github.com/caprepo/digitalbanking-accountsservice.git
 RUN cd /digitalbanking-accountsservice
 
 RUN mvn -f /digitalbanking-accountsservice/pom.xml clean install -DskipTests
-
+COPY newrelic/ /opt/
 EXPOSE 8090
 EXPOSE 6379
 
